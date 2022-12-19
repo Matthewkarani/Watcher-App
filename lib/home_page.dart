@@ -158,13 +158,13 @@ class _homePageState extends State<homePage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content : Text('Connect to broker')),
       );
+      return;
     }
     if(_publicationValidator.isEmpty){
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content : Text('Enter a publication')),
       );
-
-
+     return;
     }
     Uint8List data = Uint8List.fromList(_publishController.text.trim().codeUnits);
     Uint8Buffer dataBuffer = Uint8Buffer();
